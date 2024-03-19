@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Entities headers="X-XSRF-TOKEN=TWX-XSRF-TOKEN-VALUE:appKey=089a566e-e2e1-47a5-bd52-f13c330cebd9:Content-Type=application/json" majorVersion="9" minorVersion="5" universal="password">
+    <ThingShapes>
+        <ThingShape aspect.isEditableExtensionObject="false" aspect.isExtension="true" className="com.ptc.dbconnection.DatabaseService" description="Thing Shape that holds all necessary properties and services to modify or retrieve information about the database schema {PTC.DBConnection.Database_TS}" documentationContent="" homeMashup="" name="PTC.DBConnection.Database_TS" projectName="PTC.DBConnection" tags="PTC:ThingShape">
+            <PropertyDefinitions/>
+            <ServiceDefinitions>
+                <ServiceDefinition category="" description="Add column in database table" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="AddColumn">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="false" baseType="JSON" description="The json description of the column to add" name="dbInfo" ordinal="2"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="The field name" name="fieldName" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Add foreign key in database" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="AddForeignKey">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="false" baseType="JSON" description="The json description of the foreign key to add" name="dbInfo" ordinal="4"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="The field name" name="fieldName" ordinal="1"/>
+                        <FieldDefinition aspect.isRequired="false" baseType="DATASHAPENAME" description="***DEPRECATED-K*** Use dbInfo paramter to pass in value to service." name="referenceDataShapeName" ordinal="2"/>
+                        <FieldDefinition aspect.isRequired="false" baseType="STRING" description="***DEPRECATED-K*** Use dbInfo paramter to pass in value to service." name="referenceFieldName" ordinal="3"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Batch Action datas" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="BatchAction">
+                    <ResultType baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.dataShape="PTC.DBConnection.BatchAction" aspect.isRequired="true" baseType="INFOTABLE" description="The data in an info table" name="infoTable" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Batch Delete datas" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="BatchDelete">
+                    <ResultType baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.dataShape="PTC.DBConnection.BatchDelete" aspect.isRequired="true" baseType="INFOTABLE" description="The data in an info table" name="infoTable" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Clear all internal cache." isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="ClearCache">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions/>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Create index on a column in database table" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="CreateIndex">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="false" baseType="JSON" description="The json description of the index to add" name="dbInfo" ordinal="3"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="The field name" name="fieldName" ordinal="1"/>
+                        <FieldDefinition aspect.defaultValue="false" baseType="BOOLEAN" description="***DEPRECATED-K*** Use dbInfo paramter to pass in value to service." name="unique" ordinal="2"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Create database table using the datashape" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="CreateTable">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="false" baseType="JSON" description="The json description of the table to create" name="dbInfo" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Create database tables using the dbInfo" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="CreateTables">
+                    <ResultType baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="JSON" description="The json description of tables to create" name="dbInfo" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Delete datas" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="Delete">
+                    <ResultType baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="The data shape id" name="UID" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Drop table in database" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="DropTable">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="***DEPRECATED-J*** WARNING This service drops database table.Use it at your own risk" name="dataShapeName" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Drop database tables using the dbInfo" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="DropTables">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="JSON" description="***DEPRECATED-J*** WARNING This service drops database tables.Use it at your own risk | The json description of tables to drop" name="dbInfo" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="enable (activate) given persistence provider" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="EnablePersistenceProvider">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="The name of the persistence provider" name="persistenceProviderName" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Execute a service on the thing that will be executed in a transaction." isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="ExecuteService">
+                    <ResultType baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="JSON" description="The json parameters" name="params" ordinal="2"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="The service name" name="serviceName" ordinal="1"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="THINGNAME" description="The thing name" name="thingName" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Return data shape name" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="GetDataShapeName">
+                    <ResultType baseType="DATASHAPENAME" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Return the additional properties data shape name" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="GetDatashapeNameAp">
+                    <ResultType baseType="DATASHAPENAME" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition aspect.isAsync="false" category="" description="Return entities filtering on a specific field name using the specified value." isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="GetEntities">
+                    <ResultType baseType="INFOTABLE" description="" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="" name="dataShapeName" ordinal="1"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="" name="fieldName" ordinal="2"/>
+                        <FieldDefinition aspect.isRequired="false" baseType="STRING" description="" name="fieldValue" ordinal="3"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition aspect.isAsync="false" category="" description="" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="GetEntity">
+                    <ResultType baseType="INFOTABLE" description="" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="" name="dataShapeName" ordinal="1"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="" name="UID" ordinal="2"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition aspect.isAsync="false" category="" description="Return the primary key field name for the specified data shape." isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="GetPrimaryKey">
+                    <ResultType baseType="STRING" description="" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="" name="dataShapeName" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Return a SQL Query for a data shape and a filter" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="GetSqlQuery">
+                    <ResultType baseType="STRING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition baseType="JSON" description="The filter" name="filter" ordinal="1"/>
+                        <FieldDefinition baseType="INTEGER" description="The limit" name="limit" ordinal="3"/>
+                        <FieldDefinition baseType="INTEGER" description="The offset" name="offset" ordinal="2"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Insert datas" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="Insert">
+                    <ResultType baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="INFOTABLE" description="The data in an info table" name="infoTable" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Query data for data shape" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="Query">
+                    <ResultType baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition baseType="JSON" description="The filter" name="filter" ordinal="1"/>
+                        <FieldDefinition baseType="INTEGER" description="The limit" name="limit" ordinal="3"/>
+                        <FieldDefinition baseType="INTEGER" description="The offset" name="offset" ordinal="2"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Remove datas" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="Remove">
+                    <ResultType baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="INFOTABLE" description="The data in an info table" name="infoTable" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Remove column in database table" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="RemoveColumn">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="The field name" name="fieldName" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Remove foreign key in database" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="RemoveForeignKey">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="false" baseType="JSON" description="The json description of the foreign key to removed" name="dbInfo" ordinal="2"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="The field name" name="fieldName" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Remove index off a column in database table" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="RemoveIndex">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="false" baseType="JSON" description="The json description of the index to removed" name="dbInfo" ordinal="2"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="The field name" name="fieldName" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Start scheduler that will close all transaction for terminated thread." isAllowOverride="false" isLocalOnly="false" isOpen="false" isPrivate="true" name="StartTransactionLookup">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions/>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Start scheduler that will close all transaction for terminated thread." isAllowOverride="false" isLocalOnly="false" isOpen="false" isPrivate="true" name="StopTransactionLookup">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions/>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Commit a transaction on the database thing for this thread." isAllowOverride="false" isLocalOnly="false" isOpen="false" isPrivate="true" name="TransactionCommit">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions/>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Close a transaction on the database thing for this thread." isAllowOverride="false" isLocalOnly="false" isOpen="false" isPrivate="true" name="TransactionEnd">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions/>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Rollback a transaction on the database thing for this thread." isAllowOverride="false" isLocalOnly="false" isOpen="false" isPrivate="true" name="TransactionRollback">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions/>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Start a transaction on the database thing for this thread." isAllowOverride="false" isLocalOnly="false" isOpen="false" isPrivate="true" name="TransactionStart">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions/>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Update datas" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="Update">
+                    <ResultType baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="INFOTABLE" description="The data in an info table" name="infoTable" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Update column in database table" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="UpdateColumn">
+                    <ResultType baseType="NOTHING" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="DATASHAPENAME" description="The data shape name" name="dataShapeName" ordinal="0"/>
+                        <FieldDefinition aspect.isRequired="false" baseType="JSON" description="The json description of the column to update" name="dbInfo" ordinal="2"/>
+                        <FieldDefinition aspect.isRequired="true" baseType="STRING" description="The field name" name="fieldName" ordinal="1"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Synchronized database with data shape using the dbInfo" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="UpdateDatabaseSchema">
+                    <ResultType aspect.dataShape="PTC.DBConnection.DatabaseSchemaValidation" baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="JSON" description="The json description of tables to synchronized" name="dbInfo" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+                <ServiceDefinition category="" description="Validate existing foreign keys in database with the dbInfo" isAllowOverride="true" isLocalOnly="false" isOpen="false" isPrivate="false" name="ValidateDatabaseSchema">
+                    <ResultType baseType="INFOTABLE" description="result" name="result" ordinal="0"/>
+                    <ParameterDefinitions>
+                        <FieldDefinition aspect.isRequired="true" baseType="JSON" description="The json description of tables to synchronized" name="dbInfo" ordinal="0"/>
+                    </ParameterDefinitions>
+                </ServiceDefinition>
+            </ServiceDefinitions>
+            <EventDefinitions/>
+            <ServiceMappings/>
+            <ServiceImplementations>
+                <ServiceImplementation description="Add column in database table" handlerName="Reflection" name="AddColumn">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Add foreign key in database" handlerName="Reflection" name="AddForeignKey">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Batch Action datas" handlerName="Reflection" name="BatchAction">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Batch Delete datas" handlerName="Reflection" name="BatchDelete">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Clear all internal cache." handlerName="Reflection" name="ClearCache">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Create index on a column in database table" handlerName="Reflection" name="CreateIndex">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Create database table using the datashape" handlerName="Reflection" name="CreateTable">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Create database tables using the dbInfo" handlerName="Reflection" name="CreateTables">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Delete datas" handlerName="Reflection" name="Delete">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Drop table in database" handlerName="Reflection" name="DropTable">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Drop database tables using the dbInfo" handlerName="Reflection" name="DropTables">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="enable (activate) given persistence provider" handlerName="Reflection" name="EnablePersistenceProvider">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Execute a service on the thing that will be executed in a transaction." handlerName="Reflection" name="ExecuteService">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Return data shape name" handlerName="Reflection" name="GetDataShapeName">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Return the additional properties data shape name" handlerName="Reflection" name="GetDatashapeNameAp">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="" handlerName="Script" name="GetEntities">
+                    <ConfigurationTables>
+                        <ConfigurationTable dataShapeName="" description="Script" isMultiRow="false" name="Script" ordinal="0">
+                            <DataShape>
+                                <FieldDefinitions>
+                                    <FieldDefinition baseType="STRING" description="code" name="code" ordinal="0"/>
+                                </FieldDefinitions>
+                            </DataShape>
+                            <Rows>
+                                <Row>
+                                    <code><![CDATA[var filter = {
+    filters:{
+        fieldName:fieldName,
+        type:"EQ",
+        value:fieldValue
+    }
+};
+
+var params = {
+	filter: filter,
+	dataShapeName: dataShapeName
+};
+
+var result = me.Query(params);]]></code>
+                                </Row>
+                            </Rows>
+                        </ConfigurationTable>
+                    </ConfigurationTables>
+                </ServiceImplementation>
+                <ServiceImplementation description="" handlerName="Script" name="GetEntity">
+                    <ConfigurationTables>
+                        <ConfigurationTable dataShapeName="" description="Script" isMultiRow="false" name="Script" ordinal="0">
+                            <DataShape>
+                                <FieldDefinitions>
+                                    <FieldDefinition baseType="STRING" description="code" name="code" ordinal="0"/>
+                                </FieldDefinitions>
+                            </DataShape>
+                            <Rows>
+                                <Row>
+                                    <code><![CDATA[var primaryKey = me.GetPrimaryKey({
+	dataShapeName: dataShapeName
+});
+
+var filter = {
+	filters: {
+		fieldName: primaryKey,
+		type: "EQ",
+		value: UID
+	}
+};
+
+var result = me.Query({
+	filter: filter,
+	dataShapeName: dataShapeName,
+	limit: 1
+});]]></code>
+                                </Row>
+                            </Rows>
+                        </ConfigurationTable>
+                    </ConfigurationTables>
+                </ServiceImplementation>
+                <ServiceImplementation description="" handlerName="Script" name="GetPrimaryKey">
+                    <ConfigurationTables>
+                        <ConfigurationTable dataShapeName="" description="Script" isMultiRow="false" name="Script" ordinal="0">
+                            <DataShape>
+                                <FieldDefinitions>
+                                    <FieldDefinition baseType="STRING" description="code" name="code" ordinal="0"/>
+                                </FieldDefinitions>
+                            </DataShape>
+                            <Rows>
+                                <Row>
+                                    <code><![CDATA[var dataShape = DataShapes[dataShapeName];
+
+if (!dataShape) {
+	throw "Data shape: " + dataShapeName + " not found.";
+}
+
+var fieldDefinitions = DataShapes[dataShapeName].GetFieldDefinitions();
+
+var length = fieldDefinitions.length;
+
+var result;
+for (var x = 0; x < length; x++) {
+	var fieldDefinition = fieldDefinitions[x];
+	if (fieldDefinition.isPrimaryKey) {
+		if (result) {
+			throw "Only one primary key field is supported for Data shape:" + dataShapeName;
+		}
+		result = fieldDefinition.name;
+	}
+}]]></code>
+                                </Row>
+                            </Rows>
+                        </ConfigurationTable>
+                    </ConfigurationTables>
+                </ServiceImplementation>
+                <ServiceImplementation description="Return a SQL Query for a data shape and a filter" handlerName="Reflection" name="GetSqlQuery">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Insert datas" handlerName="Reflection" name="Insert">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Query data for data shape" handlerName="Reflection" name="Query">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Remove datas" handlerName="Reflection" name="Remove">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Remove column in database table" handlerName="Reflection" name="RemoveColumn">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Remove foreign key in database" handlerName="Reflection" name="RemoveForeignKey">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Remove index off a column in database table" handlerName="Reflection" name="RemoveIndex">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Start scheduler that will close all transaction for terminated thread." handlerName="Reflection" name="StartTransactionLookup">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Start scheduler that will close all transaction for terminated thread." handlerName="Reflection" name="StopTransactionLookup">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Commit a transaction on the database thing for this thread." handlerName="Reflection" name="TransactionCommit">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Close a transaction on the database thing for this thread." handlerName="Reflection" name="TransactionEnd">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Rollback a transaction on the database thing for this thread." handlerName="Reflection" name="TransactionRollback">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Start a transaction on the database thing for this thread." handlerName="Reflection" name="TransactionStart">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Update datas" handlerName="Reflection" name="Update">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Update column in database table" handlerName="Reflection" name="UpdateColumn">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Synchronized database with data shape using the dbInfo" handlerName="Reflection" name="UpdateDatabaseSchema">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+                <ServiceImplementation description="Validate existing foreign keys in database with the dbInfo" handlerName="Reflection" name="ValidateDatabaseSchema">
+                    <ConfigurationTables/>
+                </ServiceImplementation>
+            </ServiceImplementations>
+            <Subscriptions>
+                <Subscription description="" enabled="true" eventName="ThingStart" name="ResetCache" source="" sourceProperty="" sourceType="Thing">
+                    <ServiceImplementation description="" handlerName="Script" name="ResetCache">
+                        <ConfigurationTables>
+                            <ConfigurationTable dataShapeName="" description="" isMultiRow="false" name="Script" ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition baseType="STRING" description="code" name="code" ordinal="0"/>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code><![CDATA[me.ClearCache();]]></code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </Subscription>
+            </Subscriptions>
+            <avatar/>
+            <DesignTimePermissions>
+                <Create/>
+                <Read/>
+                <Update/>
+                <Delete/>
+                <Metadata/>
+            </DesignTimePermissions>
+            <RunTimePermissions/>
+            <VisibilityPermissions>
+                <Visibility>
+                    <Principal isPermitted="true" name="PTC.DBConnection.Default_OR" type="Organization"/>
+                    <Principal isPermitted="true" name="PTC.DBConnection.Default_OR:PTC.DBConnection.Admin_UG" type="OrganizationalUnit"/>
+                </Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions/>
+            <ConfigurationTables/>
+            <PropertyBindings/>
+            <RemotePropertyBindings/>
+            <RemoteServiceBindings/>
+            <RemoteEventBindings/>
+            <AlertConfigurations/>
+            <InstanceRunTimePermissions>
+                <Permissions resourceName="*">
+                    <PropertyRead/>
+                    <PropertyWrite/>
+                    <ServiceInvoke>
+                        <Principal isPermitted="true" name="PTC.DBConnection.Admin_UG" type="Group"/>
+                    </ServiceInvoke>
+                    <EventInvoke/>
+                    <EventSubscribe/>
+                </Permissions>
+            </InstanceRunTimePermissions>
+        </ThingShape>
+    </ThingShapes>
+</Entities>
